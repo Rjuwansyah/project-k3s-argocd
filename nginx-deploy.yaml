@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: simple-nginx
+  namespace: default
+  labels:
+    app: simple-nginx
 spec:
   replicas: 1
   selector:
@@ -15,10 +18,13 @@ spec:
       containers:
       - name: nginx
         image: nginx:stable
+        ports:
+        - containerPort: 80
         volumeMounts:
         - name: nginx-index
           mountPath: /usr/share/nginx/html/index.html
           subPath: index.html
+
       volumes:
       - name: nginx-index
         configMap:
