@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: httpd-svc
+  name: httpd-service
   namespace: default
   labels:
     app: simple-httpd
