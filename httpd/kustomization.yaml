@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - httpd-deploy.yaml
+  - httpd-service.yaml
+
+configMapGenerator:
+  - name: httpd-index
+    files:
+      - index.html
+
+generatorOptions:
+  disableNameSuffixHash: false
