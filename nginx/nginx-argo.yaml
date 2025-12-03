@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: 'https://github.com/Rjuwansyah/project-k3s-argocd.git'
     targetRevision: main
-    path: nginx
+    path: .
   destination:
     server: https://kubernetes.default.svc
     namespace: default
